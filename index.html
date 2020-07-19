@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Send on WhatsApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="icon" type="image/svg" href="whatsapp.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+    <div class="card vh-100 mx-auto justify-content-center text-center bg-dark rounded-0">
+        <img class="card-img-center mx-auto my-5" style="width: 10rem;" src="whatsapp.svg" alt="WhatsApp">
+        <div class="card-text">
+            <form>
+                <input type="tel" class="form-control my-5 mx-auto" id="num" style="font-size: 2rem; max-width: max-content;" placeholder="Enter Number">
+            </form>
+        </div>
+        <button type="button" class="btn btn-lg bg-success mx-auto my-5" id="send" style="max-width: fit-content;">Send</button>
+
+    </div>
+    <script>
+        document.getElementById("send").addEventListener("click", function () {
+            var url = "https://api.whatsapp.com/send?phone=" + document.getElementById("num").value;
+            window.open(url);
+        })
+    </script>
+</body>
+
+</html>
