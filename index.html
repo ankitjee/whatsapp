@@ -15,14 +15,15 @@
         <div class="card-text">
             <form>
                 <input type="tel" class="form-control my-5 mx-auto" id="num" style="font-size: 2rem; max-width: max-content;" placeholder="Enter Number">
+                <input type="submit" class="btn btn-lg bg-success mx-auto my-5" id="send" style="max-width: fit-content;">Send</button>
             </form>
         </div>
-        <button type="button" class="btn btn-lg bg-success mx-auto my-5" id="send" style="max-width: fit-content;">Send</button>
 
     </div>
     <script>
         document.getElementById("send").addEventListener("click", function () {
-            var url = "https://api.whatsapp.com/send?phone=" + document.getElementById("num").value;
+
+            var url = "https://api.whatsapp.com/send?phone=" + document.getElementById("num").value.replace(/\s/g,"");
             window.open(url);
         })
     </script>
